@@ -1,0 +1,9 @@
+/!\ Eteindre proprement la VM pour garder les  données /!\
+
+
+My IP :  *
+Target : *
+
+nmap target -p- -sV -sC
+
+gobuster dir -u target -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
