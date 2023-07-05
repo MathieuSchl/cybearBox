@@ -1,0 +1,9 @@
+[Unit]
+Description=Script automatique après l'attribution de l'adresse IP
+After=network.target
+
+[Service]
+ExecStart=/home/ynta/Desktop/Workdir/auto_script.sh
+
+[Install]
+WantedBy=default.target
