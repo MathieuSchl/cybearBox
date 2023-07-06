@@ -10,6 +10,34 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 
+fichier_eth0="fichier_ethernet.xml"
+
+if [ -f "$fichier_eth0" ]; then
+    # Supprimer le fichier s'il existe
+    rm "$fichier_eth0"
+    echo "Le fichier $fichier_eth0 existe et a été supprimé."
+fi
+
+# Créer un nouveau fichier
+touch "$fichier_eth0"
+echo "Le fichier $fichier_eth0 a été créé."
+
+
+
+fichier_wlan0="fichier_wlan0.xml"
+
+if [ -f "$fichier_wlan0" ]; then
+    # Supprimer le fichier s'il existe
+    rm "$fichier_wlan0"
+    echo "Le fichier $fichier_wlan0 existe et a été supprimé."
+fi
+
+# Créer un nouveau fichier
+touch "$fichier_wlan0"
+echo "Le fichier $fichier_wlan0 a été créé."
+
+
+
 ip_eth0=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(.\d+){3}')
 ip_wlan0=$(ip addr show wlan0 | grep -oP '(?<=inet\s)\d+(.\d+){3}')
 
@@ -73,7 +101,7 @@ echo "============================================"
 
   sleep 10
 
-  ./Hackathon_Cybear.sh > Hackathon_Cybear_resultats.txt
+  #./Hackathon_Cybear.sh > Hackathon_Cybear_resultats.txt
 }
 
 
@@ -136,7 +164,7 @@ fonction_wlan0() {
 
   sleep 10
 
-  ./Hackathon_Cybear.sh > Hackathon_Cybear_resultats.txt
+ # ./Hackathon_Cybear.sh > Hackathon_Cybear_resultats.txt
 }
 
 
